@@ -1,0 +1,115 @@
+Numbers:
+'Number' turns strings into Numbers
+ - string = '~text in-between quotes'
+
+ addition is an operator that will combine two strings together.
+ex:
+    let num1 = '76';
+    let num2 = '6';
+    console.log(Number(num1) + Number(Num2));
+    = 76
+
+    let num1 = '76';
+    let num2 = '6';
+    console.log(num1 + Num2);
+    = 766
+    
+    let greeting = 'Hello ';
+    let name = 'Chris';
+    console.log(greeting + name);
+    = 'Hello Chris'
+
+javascipt does it's math from right to left, thus changing the values of variables
+
+(===) vs (==)
+    - (==) compares two variables despite datatype
+    - (===) compares two variables but checks datatype
+
+assignment operators (+=, -=, *=, /=):
+    
+x += y is the same as x = x + y
+    x -= y is the same as x = x - y
+    x *= y is the same as x = x * y
+    xx /= y is the same as x = x / y
+
+template literals:
+    templates literals must use backticks ``
+    they allow embedded expressions called subtitutions
+    use ${*/ variable } to call variable / function
+
+    let greeting = 'Hello';
+    let name = 'Chris';
+    console.log(`${greeting} ${name}`)
+    = Hello Chris
+
+    or
+
+    let greeting = 'Hello ';
+    let name = 'Chris';
+    console.log(greeting + name)
+
+    or
+
+    let nameQuestion = prompt('What is your name?');
+    const greeting = 'Hello';
+    const endOfGreeting = 'how are you?';
+    name = nameQuestion
+    alert(`${greeting} ${name}, ${endOfGreeting},`)
+    = Hello (name), how are you?
+
+    You can also use /n to create multiples lines of text.
+    console.log('string test line 1\n' + 'string text line 2')
+
+    Data-types in Javascript:
+
+        - number for numbers of any kind: integer or floating-point, integers are limited by ±(253-1).
+
+         - bigint is for integer numbers of arbitrary length.
+         
+         - string for strings. 
+    
+         - A string may have zero or more characters, there's no separate single-character type.
+    
+         - boolean for true/false.
+    
+         - null for unknown values - a standalone type that has a single value null.
+    
+         - undefined for unassigned values - a standalone type that has a single value undefined.
+    
+         - object for more complex data structures.
+    
+         - symbol for unique identifiers.
+
+function main(){
+    let answer = 'TheMaster';
+    let password = prompt('Enter a password')
+        if (password == 'TheMaster'){
+            alert('Welcome Gavin');
+        }
+        else if (password == 'Cancel') {
+            alert('Cancelled');
+            menu()
+        }
+        else {
+            alert('Wrong password')
+            main()
+        }
+    }
+        
+function menu(){
+    let action = prompt('Who\'s there?');
+        if (action == 'Admin') {
+        main()
+        }
+        else if (action == 'Cancel') {
+            alert('Good-Bye!');
+        }
+        
+        else {
+            alert('I don\'t know you??')
+        menu()
+        }
+}
+        
+menu()
+        
