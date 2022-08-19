@@ -1,77 +1,81 @@
+let firstRound = true;
+
 function game() {
+let userChoice;
+let aiChoice;
+let aiCounter = 0;
+let playerCounter = 0;
+while (aiCounter != 5 && playerCounter !=5) {
 
-let aiChoices = ['rock', 'paper', 'scissors'];
-let aiChoice = Math.floor(Math.random() * aiChoices.length);
-console.log(aiChoice)
-let playerInput = prompt('Rock, paper or scissors?');
-let choice = playerInput.toLowerCase();
+aiChoice = Math.floor(Math.random() * 3)
+userChoice = prompt('rock paper or scissors?')
 
-let playerChoiceConverter = function() {    
-    if (choice == 'rock') {
-        return 0;
-    } 
-    else if (choice == 'paper') {
-        return 1;
-    }
-    else {
-        return 2;
-    }
+switch (userChoice) {
+    case 'rock':
+        userChoice = 0;
+        break;
+    case 'paper':
+        userChoice = 1
+        break;
+    case 'scissors':
+        userChoice = 2
+        break;
+    default:
+        alert('incorrect input')
 }
 
-let aiChoiceConverter = function() {    
-    if (aiChoice == 0) {
-        return 'rock';
-    } 
-    else if (aiChoice == 1) {
-        return 'paper';
-    }
-    else {
-        return 'scissors';
-    }
-}
-let aiChoiceAlert = aiChoiceConverter
-let playerChoice = playerChoiceConverter()
 
-if (playerChoice == aiChoice) {
-    alert('It\'s a tie!')
+if (aiChoice === 0 && userChoice === 2) {
+    alert(`You lose! The AI chose rock!`)
+    aiCounter++
+} else if (aiChoice === 1 && userChoice === 0) {
+    alert(`You lose The AI chose paper!`)
+    aiCounter++
+} else if (aiChoice === 2 && userChoice === 1) {
+    alert(`You lose! The AI chose scissors!`)
+    aiCounter++
+} else if (aiChoice === userChoice) {
+    alert(`It's a tie!`)
+} else {
+    alert(`You win!`)
+    playerCounter++
 }
-else if (playerChoice == 0 && (aiChoice == 1)) {
-    alert(`You lose! You\'re opponent chose ${aiChoiceAlert()}!`)
+
+if (playerCounter === 5) {
+    alert(`You beat the computer!`)
+    menu()
+} else if (aiCounter === 5) {
+    alert(`You lost the game against the ai!!`)
+    menu()
 }
-else if (playerChoice == 1 && (aiChoice == 2)) {
-    alert(`You lose! You\'re opponent chose ${aiChoiceAlert()}!`)
-}
-else if (playerChoice == 2 && (aiChoice == 0)) {
-    alert(`You lose! You\'re opponent chose ${aiChoiceAlert()}!`)
-}
-else {
-    alert('You win!')
-}
-menu()
-}
+
+console.log(`Ai choice: ${aiChoice} Player choice: ${userChoice} AI Counter: ${aiCounter} Player counter ${playerCounter}`)
+
+
+}}
+
 
 function menu() {
-    let count = 0;
-    function playerGame() {
-        if (count > 0) {
-            return prompt('Would you like to play again?');
-        } else {
-            return prompt('Would you like to play \'Rock, Paper, Scissors?\'');
-        }
-    }
-    let playGame = playerGame().toLowerCase();
-    
-    if (playGame == 'yes') {
-        game()
-        count++;
-    }
-    else if (playGame == 'no') {
-        alert('Good-bye!')
-    } else {
-        alert('Incorrect input');
-        menu()
-        --count;
-    }
+let userPlayGame = '';
+function playGame() {
+if (firstRound === true) {
+    firstRound = false
+    userPlayGame = prompt(`Would you like to play rock, paper, scissors? y or n`)
+} else {
+    userPlayGame = prompt(`Would you like to play again?`)
+}}
+
+playGame()
+
+if (userPlayGame === `y`) {
+    alert(`Goodluck!`)
+    game()
+} else if (userPlayGame === `n`) {
+    alert(`Good-bye!`)
+} else {
+    alert(`Incorrect input`)
+    playGame()
+}
 }
 
 menu()
