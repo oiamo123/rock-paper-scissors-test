@@ -1,9 +1,46 @@
 <!DOCTYPE html>
-  <head lang="en">
-    <title>JS Crash Course</title>
-    <meta charset="dtf-8">
-  </head>
-  <body>
-    <h1>JS crash course</h1>
-    <script src="./javascript/javascript.js"></script>
-  </body>
+<head lang="en">
+  <title>RPS</title>
+  <meta charset="dtf-8" />
+  <link rel="stylesheet" href="./styles.css" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu&display=swap");
+  </style>
+</head>
+<body
+  style="
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+  "
+>
+  <!-- <nav class="nav">
+    <h3 class="title">Rock Paper Scissors</h3>
+  </nav> -->
+  <div class="game">
+    <div class="player--0 active--player1">
+      <p class="player">PLAYER</p>
+      <div class="total--0">TOTAL:</div>
+      <div class="choices">
+        <div class="choice rock"><img src="./img/rock.png" /></div>
+        <div class="choice paper"><img src="./img/paper.png" /></div>
+        <div class="choice scissors"><img src="./img/scissors.png" /></div>
+      </div>
+      <div class="score--0">SCORE:</div>
+    </div>
+    <div class="reset">
+      <h1 class="winner"></h1>
+      <button class="btn--rst">RESET</button>
+    </div>
+    <div class="player--1">
+      <div class="ai">THE ALMIGHTY AI</div>
+      <div class="total--1">TOTAL:</div>
+      <div class="aiChoice">
+        <img src="./img/rock.png" class="aiChoiceImg --hidden" />
+      </div>
+      <div class="score--1">SCORE:</div>
+    </div>
+  </div>
+</body>
+<script src="./javascript.js"></script>
